@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050509">
+    <meta name="description" content="وب‌سایت رسمی مدرسه شهید ابوالقاسم کریمی رزکانی">
+    <title>مدرسه شهید کریمی | آینده از اینجا آغاز می‌شود</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/font/lucide.css">
+    <style>
+        :root {
+            --bg: #050507;
+            --bg2: #090910;
+            --card: #11111a;
+            --purple: #765cff;
+            --purple2: #a18bff;
+            --cyan: #00d9ff;
+            --gold: #d8bd82;
+            --white: #f7f7fb;
+            --muted: #a1a1ad;
+            --line: rgba(255, 255, 255, .1);
+            --font: 'Vazirmatn', Tahoma, sans-serif;
+            --max: 1200px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: auto;
+            scroll-padding-top: 100px
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--white);
+            font-family: var(--font);
+            overflow-x: hidden
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: .035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: auto
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--purple2);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px
+        }
+
+        .eyebrow:before {
+            content: "";
+            width: 26px;
+            height: 1px;
+            background: var(--purple)
+        }
+
+        .section {
+            padding: 115px 0;
+            position: relative
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 48px
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 52px);
+            line-height: 1.35;
+            margin: 14px 0 0;
+            font-weight: 800;
+            letter-spacing: -1.5px
+        }
+
+        .section-title span {
+            color: var(--purple2)
+        }
+
+        .section-desc {
+            max-width: 430px;
+            color: var(--muted);
+            line-height: 2;
+            font-size: 14px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px solid var(--line);
+            padding: 14px 22px;
+            border-radius: 999px;
+            color: white;
+            background: rgba(255, 255, 255, .045);
+            transition: .35s;
+            position: relative;
+            overflow: hidden;
+            font-size: 13px
+        }
+
+        .btn.primary {
+            background: linear-gradient(115deg, #5b47e8, #8c6cff);
+            border-color: transparent;
+            box-shadow: 0 10px 35px #6a53ff30
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            border-color: #9d8cff;
+            box-shadow: 0 10px 35px #6a53ff28
+        }
+
+        .btn .icon {
+            font-size: 17px
+        }
+
+        .top-progress {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            z-index: 2000
+        }
+
+        .nav-wrap {
+            position: fixed;
+            z-index: 100;
+            top: 22px;
+            left: 0;
+            right: 0;
+            transition: .4s
+        }
+
+        .nav {
+            width: min(1240px, calc(100% - 40px));
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            border: 1px solid transparent;
+            border-radius: 18px;
+            transition: .4s
+        }
+
+        .nav.scrolled {
+            background: #101018d9;
+            backdrop-filter: blur(20px);
+            border-color: var(--line);
+            box-shadow: 0 12px 45px #0008
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 210px
+        }
+
+        .brand-mark {
+            width: 39px;
+            height: 39px;
+            border-radius: 13px;
+            background: linear-gradient(140deg, #8d76ff, #3525a5);
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            box-shadow: 0 0 25px #765cff55
+        }
+
+        .brand strong {
+            display: block;
+            font-size: 13px
+        }
+
+        .brand small {
+            display: block;
+            color: #9c9ca8;
+            font-size: 9px;
+            margin-top: 3px;
+            letter-spacing: 1px
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            color: #c6c6cf;
+            position: relative;
+            padding: 8px 0
+        }
+
+        .nav-links a:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: var(--purple2);
+            transition: .3s
+        }
+
+        .nav-links a:hover {
+            color: white
+        }
+
+        .nav-links a:hover:after {
+            width: 100%
+        }
+
+        .nav-cta {
+            font-size: 11px;
+            padding: 10px 17px
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            color: white;
+            border: 0;
+            font-size: 24px
+        }
+
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0 90px;
+            background: radial-gradient(ellipse at 75% 42%, #31217b45, transparent 36%), radial-gradient(ellipse at 18% 75%, #003d4c26, transparent 32%), #050507
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            opacity: .14;
+            background-image: linear-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .08) 1px, transparent 1px);
+            background-size: 75px 75px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%)
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            pointer-events: none
+        }
+
+        .orb.one {
+            width: 370px;
+            height: 370px;
+            top: 15%;
+            left: 5%;
+            background: radial-gradient(circle, #6a4dff28, transparent 68%);
+            animation: float 9s ease-in-out infinite
+        }
+
+        .orb.two {
+            width: 300px;
+            height: 300px;
+            right: 13%;
+            bottom: 3%;
+            background: radial-gradient(circle, #00d9ff1d, transparent 68%);
+            animation: float 11s ease-in-out infinite reverse
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border: 1px solid #8e7bff40;
+            border-radius: 30px;
+            background: #7a61ff0c;
+            color: #c5baff;
+            font-size: 11px;
+            margin-bottom: 30px
+        }
+
+        .pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 12px var(--cyan)
+        }
+
+        .hero h1 {
+            font-size: clamp(47px, 8vw, 100px);
+            line-height: 1.22;
+            letter-spacing: -3px;
+            margin: 0 0 25px;
+            font-weight: 900;
+            max-width: 900px
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(100deg, #fff 10%, #b9aaff 48%, #69e7ff 95%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent
+        }
+
+        .hero p {
+            color: #aaaab7;
+            line-height: 2.2;
+            max-width: 550px;
+            font-size: 15px;
+            margin: 0 0 35px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap
+        }
+
+        .hero-bottom {
+            position: absolute;
+            bottom: 32px;
+            right: 50%;
+            transform: translateX(50%);
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: #777784;
+            font-size: 10px;
+            letter-spacing: 2px
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 35px;
+            background: linear-gradient(var(--purple2), transparent);
+            animation: scrollline 1.7s infinite
+        }
+
+        .hero-side {
+            position: absolute;
+            left: 8%;
+            top: 30%;
+            width: 180px;
+            height: 180px;
+            border: 1px solid #8c7cff33;
+            border-radius: 36px;
+            transform: rotate(25deg);
+            box-shadow: inset 0 0 60px #765cff0c, 0 0 60px #765cff0c;
+            animation: float 8s ease-in-out infinite
+        }
+
+        .hero-side:before,
+        .hero-side:after {
+            content: "";
+            position: absolute;
+            border: 1px solid #00d9ff36;
+            border-radius: 30px;
+            inset: 22px;
+            transform: rotate(25deg)
+        }
+
+        .hero-side:after {
+            inset: 45px;
+            border-color: #b19cff55;
+            transform: rotate(50deg)
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-22px) rotate(8deg)
+            }
+        }
+
+        @keyframes scrollline {
+            50% {
+                opacity: .3;
+                transform: scaleY(.6)
+            }
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(28px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1)
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none
+        }
+
+        .delay1 {
+            transition-delay: .12s
+        }
+
+        .delay2 {
+            transition-delay: .24s
+        }
+
+        .delay3 {
+            transition-delay: .36s
+        }
+
+        .about {
+            background: linear-gradient(180deg, #08080d, #090910)
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center
+        }
+
+        .about-visual {
+            height: 520px;
+            position: relative
+        }
+
+        .about-image {
+            position: absolute;
+            inset: 0 0 30px 45px;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid var(--line)
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.75);
+            transition: transform 1s
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05)
+        }
+
+        .about-image:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #050507b0, transparent 60%)
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            z-index: 2
+        }
+
+        .image-caption b {
+            display: block;
+            font-size: 17px
+        }
+
+        .image-caption small {
+            color: #c0bdce;
+            font-size: 10px
+        }
+
+        .float-card {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 19px 22px;
+            background: #171620e8;
+            border: 1px solid #ffffff18;
+            border-radius: 17px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 50px #0008
+        }
+
+        .float-card strong {
+            font-size: 28px;
+            color: var(--cyan);
+            display: block
+        }
+
+        .float-card span {
+            font-size: 10px;
+            color: var(--muted)
+        }
+
+        .about-copy h2 {
+            font-size: clamp(31px, 4vw, 49px);
+            line-height: 1.55;
+            margin: 17px 0 22px
+        }
+
+        .about-copy h2 span {
+            color: var(--purple2)
+        }
+
+        .about-copy p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 2.2;
+            margin: 0 0 28px
+        }
+
+        .stats {
+            padding: 45px 0;
+            background: #0d0d14;
+            border-block: 1px solid var(--line)
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .stat {
+            text-align: center;
+            padding: 15px;
+            border-left: 1px solid var(--line)
+        }
+
+        .stat:last-child {
+            border: 0
+        }
+
+        .stat b {
+            display: block;
+            font-size: clamp(30px, 4vw, 45px);
+            font-weight: 800;
+            background: linear-gradient(120deg, #fff, #9b8cff);
+            background-clip: text;
+            color: transparent
+        }
+
+        .stat span {
+            font-size: 11px;
+            color: var(--muted)
+        }
+
+        .grades {
+            background: #050507
+        }
+
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px
+        }
+
+        .grade-card {
+            position: relative;
+            min-height: 310px;
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #15141f, #0c0c12);
+            overflow: hidden;
+            transition: .4s
+        }
+
+        .grade-card:hover {
+            transform: translateY(-9px);
+            border-color: #8976ff80;
+            box-shadow: 0 25px 70px #5b46d51b
+        }
+
+        .grade-card:before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: .2;
+            left: -50px;
+            top: -65px;
+            background: var(--glow)
+        }
+
+        .grade-no {
+            font-size: 76px;
+            line-height: 1;
+            color: #ffffff12;
+            font-weight: 900;
+            position: absolute;
+            left: 25px;
+            top: 18px
+        }
+
+        .grade-icon {
+            width: 54px;
+            height: 54px;
+            border: 1px solid #ffffff20;
+            border-radius: 17px;
+            display: grid;
+            place-items: center;
+            font-size: 24px;
+            color: var(--glow);
+            background: #ffffff08
+        }
+
+        .grade-card h3 {
+            font-size: 22px;
+            margin: 28px 0 8px
+        }
+
+        .grade-card p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 2;
+            max-width: 260px
+        }
+
+        .grade-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #c7bbff;
+            font-size: 11px;
+            margin-top: 15px
+        }
+
+        .facilities {
+            background: #090910
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px
+        }
+
+        .facility {
+            height: 300px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            grid-column: span 4
+        }
+
+        .facility.wide {
+            grid-column: span 8
+        }
+
+        .facility img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.7);
+            transition: transform .8s, filter .5s
+        }
+
+        .facility:hover img {
+            transform: scale(1.08);
+            filter: brightness(.9)
+        }
+
+        .facility:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #050507ed, transparent 70%)
+        }
+
+        .facility-info {
+            position: absolute;
+            z-index: 2;
+            right: 24px;
+            bottom: 22px
+        }
+
+        .facility-info h3 {
+            font-size: 20px;
+            margin: 0 0 5px
+        }
+
+        .facility-info p {
+            font-size: 11px;
+            color: #c1c0ca;
+            margin: 0
+        }
+
+        .teachers {
+            background: #050507
+        }
+
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .teacher {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            background: #101018;
+            transition: .35s
+        }
+
+        .teacher:hover {
+            transform: translateY(-6px);
+            border-color: #8e7aff66
+        }
+
+        .teacher img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            filter: grayscale(.25) brightness(.8)
+        }
+
+        .teacher-info {
+            padding: 20px
+        }
+
+        .teacher-info h3 {
+            font-size: 16px;
+            margin: 0 0 5px
+        }
+
+        .teacher-info span {
+            font-size: 11px;
+            color: var(--purple2)
+        }
+
+        .teacher-info p {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 1.9;
+            margin: 12px 0 0
+        }
+
+        .news {
+            background: #090910
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .news-card {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            background: #11111a;
+            transition: .35s
+        }
+
+        .news-card:hover {
+            transform: translateY(-7px);
+            border-color: #8672ff77
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 205px;
+            object-fit: cover;
+            filter: brightness(.78);
+            transition: .6s
+        }
+
+        .news-card:hover img {
+            transform: scale(1.04)
+        }
+
+        .news-content {
+            padding: 20px
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 12px;
+            color: #aaa8b7;
+            font-size: 10px
+        }
+
+        .news-meta span:first-child {
+            color: var(--cyan)
+        }
+
+        .news-content h3 {
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 13px 0 8px
+        }
+
+        .news-content p {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 2;
+            margin: 0
+        }
+
+        .achievements {
+            background: radial-gradient(ellipse at 50% 50%, #2a1d6330, transparent 60%), #050507
+        }
+
+        .timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 45px
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: 8%;
+            left: 8%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #7b68ff, transparent)
+        }
+
+        .time-item {
+            position: relative;
+            padding-top: 55px
+        }
+
+        .time-item:before {
+            content: "";
+            position: absolute;
+            top: 13px;
+            right: 18px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--purple);
+            box-shadow: 0 0 0 7px #765cff22, 0 0 25px var(--purple)
+        }
+
+        .time-item b {
+            font-size: 12px;
+            color: var(--cyan)
+        }
+
+        .time-item h3 {
+            font-size: 17px;
+            margin: 10px 0
+        }
+
+        .time-item p {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 2
+        }
+
+        .gallery {
+            background: #090910;
+            overflow: hidden
+        }
+
+        .gallery-track {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 190px;
+            gap: 12px
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer
+        }
+
+        .gallery-item:nth-child(2),
+        .gallery-item:nth-child(5) {
+            grid-row: span 2
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s;
+            filter: brightness(.8)
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1)
+        }
+
+        .gallery-item:after {
+            content: "↗";
+            position: absolute;
+            left: 15px;
+            bottom: 12px;
+            background: #0505079c;
+            border: 1px solid #ffffff30;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: .3s
+        }
+
+        .gallery-item:hover:after {
+            opacity: 1
+        }
+
+        .events {
+            background: #050507
+        }
+
+        .event-list {
+            border-top: 1px solid var(--line)
+        }
+
+        .event {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 25px;
+            align-items: center;
+            padding: 24px 10px;
+            border-bottom: 1px solid var(--line);
+            transition: .3s
+        }
+
+        .event:hover {
+            background: #ffffff05;
+            padding-inline: 20px
+        }
+
+        .event-date {
+            text-align: center;
+            border-left: 1px solid var(--line)
+        }
+
+        .event-date b {
+            display: block;
+            font-size: 26px;
+            color: var(--purple2)
+        }
+
+        .event-date small {
+            font-size: 10px;
+            color: var(--muted)
+        }
+
+        .event h3 {
+            font-size: 16px;
+            margin: 0 0 6px
+        }
+
+        .event p {
+            font-size: 11px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .event-tag {
+            font-size: 10px;
+            color: var(--cyan);
+            border: 1px solid #00d9ff35;
+            padding: 7px 12px;
+            border-radius: 30px
+        }
+
+        .contact {
+            background: linear-gradient(180deg, #090910, #08080d)
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 60px
+        }
+
+        .contact-details h2 {
+            font-size: 37px;
+            line-height: 1.5;
+            margin: 15px 0
+        }
+
+        .contact-details>p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 2
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-top: 24px
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: #765cff1b;
+            color: #b7aaff;
+            display: grid;
+            place-items: center;
+            font-size: 18px
+        }
+
+        .contact-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px
+        }
+
+        .contact-item b {
+            font-size: 12px;
+            font-weight: 500
+        }
+
+        .contact-form {
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 23px;
+            background: #111119
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .field.full {
+            grid-column: 1/-1
+        }
+
+        .field label {
+            font-size: 11px;
+            color: #c5c4ce
+        }
+
+        .field input,
+        .field textarea {
+            width: 100%;
+            background: #09090f;
+            border: 1px solid #ffffff15;
+            border-radius: 11px;
+            padding: 13px;
+            color: white;
+            outline: none;
+            font-size: 12px;
+            transition: .3s
+        }
+
+        .field input:focus,
+        .field textarea:focus {
+            border-color: #8c78ff
+        }
+
+        .field textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        .form-message {
+            font-size: 11px;
+            margin-top: 12px;
+            color: #70e5bd;
+            min-height: 20px
+        }
+
+        .map-box {
+            margin-top: 20px;
+            height: 170px;
+            border-radius: 17px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: linear-gradient(135deg, #161525, #0b2029);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: #bcb8d0;
+            font-size: 12px;
+            position: relative
+        }
+
+        .map-box:before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 1px;
+            background: #ffffff12;
+            transform: rotate(-25deg)
+        }
+
+        .map-box span {
+            z-index: 1
+        }
+
+        .footer {
+            padding: 60px 0 25px;
+            background: #040406;
+            border-top: 1px solid var(--line)
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
+            padding-bottom: 45px
+        }
+
+        .footer p {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 2;
+            max-width: 300px
+        }
+
+        .footer h4 {
+            font-size: 13px;
+            margin: 0 0 18px
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 12px
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            color: var(--muted);
+            transition: .2s
+        }
+
+        .footer-links a:hover {
+            color: white
+        }
+
+        .copyright {
+            border-top: 1px solid var(--line);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            color: #777783;
+            font-size: 10px
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: #000e;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            backdrop-filter: blur(12px)
+        }
+
+        .lightbox.open {
+            display: flex
+        }
+
+        .lightbox img {
+            max-width: min(100%, 1000px);
+            max-height: 85vh;
+            border-radius: 15px
+        }
+
+        .lightbox button {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: #ffffff18;
+            border: 1px solid #ffffff30;
+            color: white;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: 22px
+        }
+
+        .cursor-glow {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #795dff12, transparent 68%);
+            transform: translate(-50%, -50%);
+            display: none
+        }
+
+        @media(pointer:fine) {
+            .cursor-glow {
+                display: block
+            }
+        }
+
+        @media(max-width:900px) {
+            .nav-links {
+                gap: 13px
+            }
+
+            .nav-links a {
+                font-size: 10px
+            }
+
+            .nav-cta {
+                display: none
+            }
+
+            .about-grid {
+                gap: 35px
+            }
+
+            .facility {
+                grid-column: span 6
+            }
+
+            .facility.wide {
+                grid-column: span 6
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .timeline {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .timeline:before {
+                display: none
+            }
+        }
+
+        @media(max-width:650px) {
+            .container {
+                width: min(100% - 34px, var(--max))
+            }
+
+            .section {
+                padding: 78px 0
+            }
+
+            .nav-wrap {
+                top: 10px
+            }
+
+            .nav {
+                width: calc(100% - 22px);
+                padding: 10px 13px
+            }
+
+            .brand {
+                min-width: 0
+            }
+
+            .brand-mark {
+                width: 35px;
+                height: 35px
+            }
+
+            .menu-btn {
+                display: block
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                right: 0;
+                left: 0;
+                padding: 18px;
+                background: #101018f5;
+                border: 1px solid var(--line);
+                border-radius: 16px;
+                backdrop-filter: blur(18px);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px
+            }
+
+            .nav-links.open {
+                display: flex
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 10px
+            }
+
+            .hero {
+                min-height: 790px;
+                padding-top: 130px
+            }
+
+            .hero h1 {
+                font-size: clamp(43px, 13vw, 68px);
+                letter-spacing: -2px
+            }
+
+            .hero p {
+                font-size: 13px
+            }
+
+            .hero-side {
+                width: 100px;
+                height: 100px;
+                left: 4%;
+                top: 16%;
+                opacity: .5
+            }
+
+            .section-head {
+                display: block;
+                margin-bottom: 32px
+            }
+
+            .section-desc {
+                margin-top: 15px
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .about-visual {
+                height: 360px;
+                order: 2
+            }
+
+            .about-image {
+                inset: 0 0 25px 25px
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .stat:nth-child(2) {
+                border: 0
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--line)
+            }
+
+            .grade-grid,
+            .teacher-grid,
+            .news-grid {
+                grid-template-columns: 1fr
+            }
+
+            .grade-card {
+                min-height: 260px
+            }
+
+            .facility-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px
+            }
+
+            .facility,
+            .facility.wide {
+                grid-column: span 1;
+                height: 220px
+            }
+
+            .facility:first-child {
+                grid-column: span 2
+            }
+
+            .facility-info {
+                right: 14px;
+                bottom: 14px
+            }
+
+            .facility-info h3 {
+                font-size: 15px
+            }
+
+            .facility-info p {
+                font-size: 9px
+            }
+
+            .teacher img {
+                height: 240px
+            }
+
+            .timeline {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px
+            }
+
+            .time-item {
+                padding-top: 40px
+            }
+
+            .gallery-track {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 145px;
+                gap: 8px
+            }
+
+            .gallery-item:nth-child(4) {
+                grid-column: span 1
+            }
+
+            .event {
+                grid-template-columns: 65px 1fr;
+                gap: 14px
+            }
+
+            .event-tag {
+                display: none
+            }
+
+            .event h3 {
+                font-size: 13px
+            }
+
+            .event p {
+                font-size: 10px
+            }
+
+            .contact-form {
+                padding: 19px
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .field.full {
+                grid-column: auto
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px
+            }
+
+            .footer-grid>div:first-child {
+                grid-column: 1/-1
+            }
+
+            .copyright {
+                display: block;
+                line-height: 2
+            }
+
+            .hero-bottom {
+                bottom: 20px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-progress" id="progress"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <header class="nav-wrap">
+        <nav class="nav" id="nav">
+            <a class="brand" href="#home"><span class="brand-mark">✦</span><span><strong>مدرسه شهید
+                        کریمی</strong><small>SHAHID KARIMI SCHOOL</small></span></a>
+            <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+            <div class="nav-links" id="navLinks"><a href="#home">خانه</a><a href="#about">درباره مدرسه</a><a
+                    href="#facilities">امکانات</a><a href="#grades">پایه‌ها</a><a href="#news">اخبار</a><a
+                    href="#achievements">افتخارات</a><a href="#contact">تماس</a></div>
+            <a class="btn nav-cta" href="#about">کشف دنیای ما <span>↗</span></a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-grid"></div>
+            <div class="orb one"></div>
+            <div class="orb two"></div>
+            <div class="hero-side"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-tag"><i class="pulse"></i> مدرسه‌ای برای نسل آینده</div>
+                    <h1>آینده از <span class="gradient">اینجا</span><br>آغاز می‌شود.</h1>
+                    <p>جایی برای کشف استعدادها، ساختن رویاها و تبدیل ایده‌ها به آینده. یادگیری در مدرسه شهید کریمی،
+                        فراتر از کلاس درس است.</p>
+                    <div class="hero-actions"><a class="btn primary" href="#about">با مدرسه آشنا شوید <span
+                                class="icon">↙</span></a><a class="btn" href="#facilities">مشاهده امکانات <span
+                                class="icon">↗</span></a></div>
+                </div>
+            </div>
+            <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><i class="scroll-line"></i></div>
+        </section>
+
+        <section class="section about" id="about">
+            <div class="container about-grid">
+                <div class="about-visual reveal">
+                    <div class="about-image"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=85"
+                            alt="نمایی از فضای آموزشی مدرسه">
+                        <div class="image-caption"><b>فضایی برای رشد و کشف</b><small>LEARN · CREATE · INSPIRE</small>
+                        </div>
+                    </div>
+                    <div class="float-card"><strong>۱۴۰۵</strong><span>سال تحصیلی جاری</span></div>
+                </div>
+                <div class="about-copy reveal delay1"><span class="eyebrow">ABOUT OUR SCHOOL</span>
+                    <h2>ما فقط یک مدرسه نیستیم؛<br><span>نقطه شروع آینده‌ای متفاوتیم.</span></h2>
+                    <p>در مدرسه شهید ابوالقاسم کریمی رزکانی، باور داریم هر دانش‌آموز دنیایی از توانایی‌ها و ایده‌های
+                        منحصربه‌فرد است. تلاش می‌کنیم محیطی پویا، امن و الهام‌بخش فراهم کنیم تا دانش‌آموزان در کنار
+                        یادگیری علمی، مهارت فکر کردن، همکاری و خلاقیت را تجربه کنند.</p><a class="btn"
+                        href="#contact">بیشتر درباره ما <span>↗</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat reveal"><b data-count="3">۰</b><span>پایه تحصیلی</span></div>
+                <div class="stat reveal delay1"><b data-count="100">۰</b><span>فرصت برای یادگیری</span></div>
+                <div class="stat reveal delay2"><b data-count="1">۰</b><span>مسیر مشترک برای پیشرفت</span></div>
+                <div class="stat reveal delay3"><b data-count="∞">∞</b><span>ایده برای آینده</span></div>
+            </div>
+        </section>
+
+        <section class="section grades" id="grades">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="eyebrow">LEARNING JOURNEY</span>
+                        <h2 class="section-title">سه گام تا <span>فردایی بزرگ‌تر</span></h2>
+                    </div>
+                    <p class="section-desc">هر پایه، مرحله‌ای تازه از شناخت توانایی‌ها، تجربه کردن و ساختن مسیر شخصی
+                        یادگیری است.</p>
+                </div>
+                <div class="grade-grid">
+                    <article class="grade-card reveal" style="--glow:#00d9ff"><span class="grade-no">07</span>
+                        <div class="grade-icon">✧</div>
+                        <h3>پایه هفتم</h3>
+                        <p>آغاز یک مسیر تازه؛ کشف علایق، شکل‌گیری عادت‌های یادگیری و تجربه دنیای جدید دانش.</p><a
+                            class="grade-link" href="#contact">ورود به دنیای هفتم <span>←</span></a>
+                    </article>
+                    <article class="grade-card reveal delay1" style="--glow:#9b79ff"><span class="grade-no">08</span>
+                        <div class="grade-icon">⌘</div>
+                        <h3>پایه هشتم</h3>
+                        <p>عمیق‌تر فکر کن، بیشتر تجربه کن و مهارت‌هایی بساز که تو را یک قدم جلوتر می‌برند.</p><a
+                            class="grade-link" href="#contact">ورود به دنیای هشتم <span>←</span></a>
+                    </article>
+                    <article class="grade-card reveal delay2" style="--glow:#d8bd82"><span class="grade-no">09</span>
+                        <div class="grade-icon">◈</div>
+                        <h3>پایه نهم</h3>
+                        <p>زمان انتخاب و هدف‌گذاری؛ شناخت استعدادها و آماده شدن برای فصل بعدی زندگی تحصیلی.</p><a
+                            class="grade-link" href="#contact">ورود به دنیای نهم <span>←</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+   
+
+        <section class="section teachers" id="teachers">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="eyebrow">OUR EDUCATORS</span>
+                        <h2 class="section-title">همراهان مسیر <span>یادگیری</span></h2>
+                    </div>
+                    <p class="section-desc">معلمان و کادر مدرسه، همراه دانش‌آموزان در مسیر پرسیدن، آموختن و پیشرفت
+                        هستند.</p>
+                </div>
+                <div class="teacher-grid">
+                    <article class="teacher reveal"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85"
+                            alt="تصویر جایگزین مدیر مدرسه">
+                        <div class="teacher-info">
+                            <h3>آقای علی مرادعلی‌زاده</h3><span>مدیر مدرسه</span>
+                            <p>مدیریت و راهبری مجموعه آموزشی مدرسه شهید کریمی.</p>
+                        </div>
+                    </article>
+                    <article class="teacher reveal delay1"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85"
+                            alt="تصویر جایگزین معاون مدرسه">
+                        <div class="teacher-info">
+                            <h3>آقای احمدی</h3><span>معاون مدرسه</span>
+                            <p>همراه دانش‌آموزان در امور آموزشی و اجرایی.</p>
+                        </div>
+                    </article>
+                    <article class="teacher reveal delay2"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85"
+                            alt="تصویر جایگزین کادر مدرسه"
+                            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85'">
+                        <div class="teacher-info">
+                            <h3>آقای قاسمی</h3><span>ناظم مدرسه</span>
+                            <p>پیگیری نظم و همراهی در امور روزمره مدرسه.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section news" id="news">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="eyebrow">LATEST UPDATES</span>
+                        <h2 class="section-title">تازه‌های <span>مدرسه</span></h2>
+                    </div>
+                    <p class="section-desc">خبرها، اطلاعیه‌ها و اتفاق‌هایی که جریان زندگی مدرسه را شکل می‌دهند.</p>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card reveal"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=85"
+                            alt="">
+                   
+                    </article>
+                    <article class="news-card reveal delay1"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=85"
+                            alt=" ">
+                        <div class="news-content">
+                        
+                    </article>
+                    <article class="news-card reveal delay2"><img loading="lazy"
+                            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85"
+                            alt=" ">
+                        <div class="news-content">
+                   
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section achievements" id="achievements">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="eyebrow">MILESTONES & MOMENTS</span>
+                        <h2 class="section-title">مسیر افتخار، <span>ادامه دارد</span></h2>
+                    </div>
+                    <p class="section-desc">هر دستاورد، حاصل تلاش، پشتکار و فرصتی برای الهام گرفتن از قدم بعدی است.</p>
+                </div>
+                <div class="timeline">
+                    <div class="time-item reveal"><b>پژوهش</b>
+                        <h3>جشنواره خوارزمی</h3>
+                        <p>معرفی و ثبت دستاوردهای پژوهشی دانش‌آموزان مدرسه.</p>
+                    </div>
+                    <div class="time-item reveal delay1"><b>علم و فناوری</b>
+                        <h3>ایده‌های نوآورانه</h3>
+                        <p>نمایش پروژه‌ها، تجربه‌ها و مسیرهای خلاقانه دانش‌آموزی.</p>
+                    </div>
+                    <div class="time-item reveal delay2"><b>فرهنگی</b>
+                        <h3>فعالیت‌های گروهی</h3>
+                        <p>ثبت لحظه‌های مشارکت و همراهی در برنامه‌های مدرسه.</p>
+                    </div>
+                    <div class="time-item reveal delay3"><b>ورزشی</b>
+                        <h3>تلاش و همدلی</h3>
+                        <p>معرفی موفقیت‌ها و تلاش‌های ورزشی دانش‌آموزان.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div><span class="eyebrow">LET'S CONNECT</span>
+                        <h2 class="section-title">با ما در <span>ارتباط باشید</span></h2>
+                    </div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-details reveal">
+                        <h2>گفت‌وگو،<br><span style="color:var(--purple2)">شروع یک مسیر تازه است.</span></h2>
+                        <p>برای دریافت اطلاعات بیشتر درباره مدرسه، برنامه‌ها و فعالیت‌ها از راه‌های ارتباطی زیر استفاده
+                            کنید.</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">⌖</div>
+                            <div><small>نشانی</small><b>استان البرز , شهرستان فردیس , رزکان نو , لاوار امیر کبیر , زنبق 12 </b></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">☎</div>
+                            <div><small>تلفن مدرسه</small><b>شماره تماس در این قسمت ثبت می‌شود</b></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉</div>
+                            <div><small>ایمیل</small><b>ایمیل رسمی مدرسه را وارد کنید</b></div>
+                        </div>
+                        <div class="map-box"><span>⌖ &nbsp; محل قرارگیری نقشه مدرسه<br><small>پس از ثبت نشانی دقیق، نقشه
+                                    جایگزین شود.</small></span></div>
+                    </div>
+                    <form class="contact-form reveal delay1" id="contactForm">
+                        <div class="form-grid">
+                            <div class="field"><label for="fullname">نام و نام خانوادگی</label><input id="fullname"
+                                    name="fullname" required minlength="2" placeholder="نام شما"></div>
+                            <div class="field"><label for="email">ایمیل</label><input id="email" name="email"
+                                    type="email" required placeholder="name@example.com"></div>
+                            <div class="field full"><label for="subject">موضوع پیام</label><input id="subject"
+                                    name="subject" required placeholder="موضوع پیام شما"></div>
+                            <div class="field full"><label for="message">متن پیام</label><textarea id="message"
+                                    name="message" required minlength="8"
+                                    placeholder="پیام خود را بنویسید..."></textarea></div>
+                            <div class="field full"><button class="btn primary" type="submit">ثبت پیام
+                                    <span>↗</span></button>
+                                <div class="form-message" id="formMessage" aria-live="polite"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><a class="brand" href="#home"><span class="brand-mark">✦</span><span><strong>مدرسه شهید
+                                کریمی</strong><small>SHAHID KARIMI SCHOOL</small></span></a>
+                    <p>جایی برای کشف استعدادها، ساختن رویاها و تبدیل ایده‌ها به آینده. وب‌سایت رسمی مدرسه شهید ابوالقاسم
+                        کریمی رزکانی.</p>
+                </div>
+                <div>
+                    <h4>دسترسی سریع</h4>
+                    <div class="footer-links"><a href="#about">درباره مدرسه</a><a href="#grades">پایه‌های تحصیلی</a><a
+                            href="#facilities">امکانات</a><a href="#teachers">کادر مدرسه</a></div>
+                </div>
+                <div>
+                    <h4>بخش‌ها</h4>
+                    <div class="footer-links"><a href="#news">اخبار و اطلاعیه‌ها</a><a
+                            href="#achievements">افتخارات</a><a href="#gallery">گالری تصاویر</a><a
+                            href="#events">رویدادها</a></div>
+                </div>
+                <div>
+                    <h4>ارتباط</h4>
+                    <div class="footer-links"><a href="#contact">تماس با مدرسه</a><a href="#contact">نشانی و
+                            موقعیت</a><a href="#contact">ارسال پیام</a></div>
+                </div>
+            </div>
+            <div class="copyright"><span>© ۱۴۰۵ — تمامی حقوق برای مدرسه شهید کریمی محفوظ است.</span><span>طراحی با تمرکز
+                    بر یادگیری، خلاقیت و آینده.</span></div>
+        </div>
+    </footer>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="نمایش تصویر"><button
+            id="lightboxClose" aria-label="بستن">×</button><img id="lightboxImg" alt=""></div>
+    <script>
+        const $ = (s, p = document) => p.querySelector(s), $$ = (s, p = document) => [...p.querySelectorAll(s)];
+        const nav = $('#nav'), links = $('#navLinks'), menu = $('#menuBtn'), progress = $('#progress');
+        menu.addEventListener('click', () => links.classList.toggle('open'));
+        $$('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+        function onScroll() { const y = window.scrollY; nav.classList.toggle('scrolled', y > 35); const max = document.documentElement.scrollHeight - innerHeight; progress.style.width = (max > 0 ? y / max * 100 : 0) + '%' } window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const revealObserver = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target) } }), { threshold: .12 });
+        $$('.reveal').forEach(el => revealObserver.observe(el));
+        const counterObserver = new IntersectionObserver(entries => entries.forEach(e => { if (!e.isIntersecting) return; const el = e.target; const target = Number(el.dataset.count); if (Number.isFinite(target)) { let start = 0; const duration = 900; const t0 = performance.now(); function tick(t) { const p = Math.min((t - t0) / duration, 1); el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('fa-IR'); if (p < 1) requestAnimationFrame(tick) } requestAnimationFrame(tick) } counterObserver.unobserve(el) }), { threshold: .6 });
+        $$('[data-count]').forEach(el => counterObserver.observe(el));
+        if (!reduce && matchMedia('(pointer:fine)').matches) { const glow = $('#cursorGlow'); window.addEventListener('pointermove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px' }, { passive: true }) }
+        const lightbox = $('#lightbox'), lightboxImg = $('#lightboxImg');
+        $$('.gallery-item img').forEach(img => img.addEventListener('click', () => { lightboxImg.src = img.src; lightboxImg.alt = img.alt; lightbox.classList.add('open'); document.body.style.overflow = 'hidden' }));
+        function closeLightbox() { lightbox.classList.remove('open'); document.body.style.overflow = '' } $('#lightboxClose').addEventListener('click', closeLightbox); lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox() }); document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox() });
+        $('#contactForm').addEventListener('submit', e => { e.preventDefault(); const form = e.currentTarget; if (!form.reportValidity()) return; $('#formMessage').textContent = 'پیام شما در این نسخه نمایشی ثبت محلی شد. برای ارسال واقعی، باید فرم به ایمیل یا سرور مدرسه متصل شود.'; form.reset() });
+        if (!reduce) { $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const target = $(a.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }) } })) }
+    </script>
+</body>
+
+</html>
